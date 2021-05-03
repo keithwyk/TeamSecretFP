@@ -11,6 +11,10 @@
       rel="stylesheet"
       id="bootstrap-css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -206,25 +210,30 @@
         </div>
 
         <!-- Modal for username and gender Start -->
-        <div
+
+        <form
           class="modal form-control"
           tabindex="-1"
           role="dialog"
           id="myModal"
+          data-backdrop="static"
+          data-keyboard="false"
+          onsubmit="event.preventDefault(); saveinfo();"
         >
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name</label>
+            <label for="username" class="col-form-label">Name</label>
             <input
               type="text"
               class="form-control"
               id="username"
               placeholder="Enter your name"
+              required
             />
           </div>
-          <div class="modal-body col-md-4" id="agender">
-            <label for="agender">What is your gender?</label><br />
+          <div class="modal-body" id="agender">
+            <label class="gender-text">What is your gender?</label><br />
             <label class="radio-inline">
-              <input type="radio" name="gender" value="Male" />
+              <input type="radio" name="gender" value="Male" checked />
               Male
             </label>
             <label class="radio-inline">
@@ -234,15 +243,15 @@
           </div>
           <div class="modal-footer">
             <button
-              type="button"
+              type="submit"
               class="btn btn-primary"
-              onclick="saveinfo()"
-              data-dismiss="modal"
+              data-backdrop="static"
+              data-keyboard="false"
             >
               Save changes
             </button>
           </div>
-        </div>
+        </form>
         <!-- Model for username and gender End -->
         <div class="col-md-9 dcy-main">
           <!--- \\\\\\\Post-->
@@ -342,7 +351,8 @@
                   <button
                     type="submit"
                     class="btn btn-primary"
-                    onclick="mypost()"
+                    id="submitBtn"
+                    onclick="saveinfo2()"
                   >
                     Share
                   </button>
@@ -409,6 +419,8 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="js/FeedController.js"></script>
     <script src="js/FeedListing.js"></script>
     <script src="js/newpost.js"></script>

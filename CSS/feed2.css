@@ -19,7 +19,12 @@ body {
 #myModal {
   margin: auto;
   width: 30%;
-  height: 50%;
+  height: 33%;
+}
+
+#agender {
+  margin: 0;
+  padding: 1px;
 }
 
 #nav-bar {
@@ -37,10 +42,9 @@ body {
   font-size: 0.8rem;
 }
 
-.username {
-  margin-left: 20px;
-  padding-top: 15px;
-  font-size: 20px;
+label.col-form-label,
+label.gender-text {
+  font-weight: bold;
 }
 
 #l-nav-bar-title {
@@ -86,6 +90,11 @@ body {
   margin-left: 90px;
   margin-top: 20px;
 }
+div.card-footer {
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+}
 
 @media screen and (max-width: 768px) {
   .dcy-main {
@@ -125,8 +134,8 @@ body {
 
   #myModal {
     font-size: 90%;
-    width: 50%;
-    height: 45%;
+    width: 60%;
+    height: 29%;
   }
 
   input#username.form-control {
@@ -134,7 +143,7 @@ body {
   }
 
   .btn.btn-primary {
-    font-size: 80%;
+    font-size: 70%;
   }
 }
 
